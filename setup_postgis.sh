@@ -14,6 +14,9 @@ sudo apt-get -y install libxml2-dev
 sudo apt-get -y install libproj-dev
 sudo apt-get -y install libjson0-dev
 sudo apt-get -y install libgdal1-dev
+sudo apt-get -y install xsltproc
+sudo apt-get -y install docbook-xsl
+sudo apt-get -y install docbook-mathml
 
 #get configure, make, and install geos.
 cd ~
