@@ -47,9 +47,9 @@ sudo service postgresql stop
 sudo service postgresql start 
 
 #spatial enable default databases
-psql -c "psql postgres -d geodata -c \"create extension postgis;\""
-psql -c "psql postgres -d geodata -c \"create extension postgis_toplogy;\""
-psql -c "psql postgres -d geodata -c \"create extension hstore;\""
-psql -c "psql postgres -d egdb -c \"create extension postgis;\""
-psql -c "psql postgres -d egdb -c \"create extension postgis_toplogy;\""
-psql -c "psql postgres -d egdb -c \"create extension hstore;\""
+psql -c "psql -U postgres -d geodata -c \"create extension postgis;\""
+psql -c "psql -U postgres -d geodata -c \"create extension postgis_toplogy;\""
+psql -c "psql -U postgres -d geodata -c \"create extension hstore;\""
+psql -c "psql -U postgres -d egdb -c \"create extension postgis;\""
+psql -c "psql -U postgres -d egdb -c \"create extension postgis_toplogy;\""
+psql -c "psql -U postgres -d egdb -c \"create extension hstore;\""
