@@ -43,7 +43,7 @@ sudo service postgresql start
 #spatially  enable default databases make sure that the user postgres is set to trust for local conections in the pg_hba.conf file
 #then make sure you switch this to md5 after.
 psql -U postgres -d geodata -c "create extension postgis;"
-sql -U postgres -d egdb -c "create extension postgis;"
+psql -U postgres -d egdb -c "create extension postgis;"
 
 
 sudo service postgresql stop
