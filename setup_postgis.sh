@@ -40,9 +40,9 @@ sudo ldconfig
 sudo make comments-install -s 
 sudo ldconfig
 
-
 sudo service postgresql stop
 sudo service postgresql start 
+
 
 #spatially  enable default databases make sure that the user postgres is set to trust for local conections in the pg_hba.conf file
 #then make sure you switch this to md5 after.
