@@ -40,10 +40,15 @@ sudo ldconfig
 sudo service postgresql stop
 sudo service postgresql start 
 
-#spatial enable default databases
+#spatially  enable default databases make sure that the user postgres is set to trust for local conections in the pg_hba.conf file
+#then make sure you switch this to md5 after.
 psql -c "psql -U postgres -d geodata -c \"create extension postgis;\""
 psql -c "psql -U postgres -d geodata -c \"create extension postgis_toplogy;\""
 psql -c "psql -U postgres -d geodata -c \"create extension hstore;\""
 psql -c "psql -U postgres -d egdb -c \"create extension postgis;\""
 psql -c "psql -U postgres -d egdb -c \"create extension postgis_toplogy;\""
 psql -c "psql -U postgres -d egdb -c \"create extension hstore;\""
+
+
+sudo service postgresql stop
+sudo service postgresql start 
