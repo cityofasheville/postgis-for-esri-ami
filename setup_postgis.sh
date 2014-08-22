@@ -3,6 +3,7 @@
 #update and make sure all postgis depencies are setup
 sudo apt-get -y update
 sudo apt-get -y install wget
+wget --quiet --no-check-certificate -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main" >> sudo /etc/apt/sources.list
 sudo apt-get -y update
 sudo apt-get -y install postgresql-server-dev-9.2
