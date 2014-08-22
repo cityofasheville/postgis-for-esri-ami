@@ -36,12 +36,6 @@ sudo ldconfig
 sudo make comments-install -s 
 sudo ldconfig
 
-#open connections for all postgres 
-echo "listen_addresses = '*'" >> /etc/postgresql/9.2/main/postgresql.conf
-
-#set permissions for all connections
-echo "host    all             all             0.0.0.0/0               md5" >> /etc/postgresql/9.2/main/pg_hba.conf
-echo "local    all            postgres                                trust" >> /etc/postgresql/9.2/main/pg_hba.conf
 
 sudo service postgresql stop
 sudo service postgresql start 
