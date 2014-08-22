@@ -1,6 +1,8 @@
 #!/bin/bash
 
 #update and make sure all postgis depencies are setup
+
+#
 sudo apt-get -y update
 sudo apt-get -y install wget
 wget --quiet --no-check-certificate -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
@@ -52,6 +54,10 @@ sudo -u postgres psql -U postgres -d geodata -c "create extension postgis_topolo
 sudo -u postgres psql -U postgres -d egdb -c "create extension postgis;"
 sudo -u postgres psql -U postgres -d egdb -c "create extension postgis_topology;"
 
+#fixes error gist_geometry_ops dosen't exist
+sudo -u postgres psql -U postgres -d geodata -f ./postgis-2.0.6/postgis/legacy_gist.sql
+sudo -u postgres psql -U postgres -d egdb -f ./postgis-2.0.6/postgis/legacy_gist.sql
+sudo -u postgres psql -U postgres -d postgres -f ./postgis-2.0.6/postgis/legacy_gist.sql
 
 sudo service postgresql stop
 sudo service postgresql start 
