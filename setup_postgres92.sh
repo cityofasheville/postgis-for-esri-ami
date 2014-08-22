@@ -6,4 +6,4 @@ sudo chmod 777 pdgd.list
 echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main" >>  pdgd.list
 wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -
 sudo apt-get update
-sudo apt-get install postgresql-9.2
+sudo apt-get -y install postgresql-9.2
