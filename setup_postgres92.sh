@@ -1,7 +1,7 @@
 #load postgres 9.2 the esri ami has this already only have it for testing script.
 #also for loading postgres 9.2 for other installs
 cd /etc/apt/sources.list.d/
-touch pdgd.list
+sudo touch pdgd.list
 sudo chmod 777 pdgd.list
 echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main" >>  pdgd.list
 wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -
