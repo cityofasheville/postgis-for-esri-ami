@@ -1,8 +1,7 @@
 #!/bin/bash
 
 #update and make sure all postgis depencies are setup
-
-#
+#awesomes that postgres9.2 is arleady installed in this case with esri ami's
 sudo apt-get -y update
 sudo apt-get -y install wget
 wget --quiet --no-check-certificate -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
