@@ -43,20 +43,20 @@ sudo ldconfig
 sudo service postgresql stop
 sudo service postgresql start 
 
-
 #spatially  enable default databases make sure that the user postgres is set to trust for local conections in the pg_hba.conf file
 #then make sure you switch this to md5 after.
-sudo -u postgres psql -U postgres -d postgres -c "create extension postgis;"
-sudo -u postgres psql -U postgres -d postgres -c "create extension postgis_topology;"
-sudo -u postgres psql -U postgres -d geodata -c "create extension postgis;"
-sudo -u postgres psql -U postgres -d geodata -c "create extension postgis_topology;"
-sudo -u postgres psql -U postgres -d egdb -c "create extension postgis;"
-sudo -u postgres psql -U postgres -d egdb -c "create extension postgis_topology;"
+#this is using default postgres login DO NOT forget change defaults after server is running
+sudo -u postgres PGPASSWORD=postgres psql -U postgres -d postgres -c "create extension postgis;"
+sudo -u postgres PGPASSWORD=postgres psql -U postgres -d postgres -c "create extension postgis_topology;"
+sudo -u postgres PGPASSWORD=postgres psql -U postgres -d geodata -c "create extension postgis;"
+sudo -u postgres PGPASSWORD=postgres psql -U postgres -d geodata -c "create extension postgis_topology;"
+sudo -u postgres PGPASSWORD=postgres psql -U postgres -d egdb -c "create extension postgis;"
+sudo -u postgres PGPASSWORD=postgres psql -U postgres -d egdb -c "create extension postgis_topology;"
 
 #fixes error gist_geometry_ops dosen't exist
-sudo -u postgres psql -U postgres -d geodata -f ./postgis-2.0.6/postgis/legacy_gist.sql
-sudo -u postgres psql -U postgres -d egdb -f ./postgis-2.0.6/postgis/legacy_gist.sql
-sudo -u postgres psql -U postgres -d postgres -f ./postgis-2.0.6/postgis/legacy_gist.sql
+sudo -u postgres PGPASSWORD=postgres psql -U postgres -d geodata -f ./postgis-2.0.6/postgis/legacy_gist.sql
+sudo -u postgres PGPASSWORD=postgres psql -U postgres -d egdb -f ./postgis-2.0.6/postgis/legacy_gist.sql
+sudo -u postgres PGPASSWORD=postgres psql -U postgres -d postgres -f ./postgis-2.0.6/postgis/legacy_gist.sql
 
 sudo service postgresql stop
 sudo service postgresql start 
