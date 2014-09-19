@@ -53,9 +53,7 @@ sudo -u postgres PGPASSWORD=postgres psql -U postgres -d template_postgis -c "cr
 
 #fixes error gist_geometry_ops dosen't exist
 sudo -u postgres PGPASSWORD=postgres psql -U postgres -d template_postgis -f /home/ubuntu/postgis-2.0.6/postgis/legacy_gist.sql
-
-
-createdb -U postgres -E 'UTF8' -D pg_default -T template_postgis -O postgres  coagis
+sudo -u postgres PGPASSWORD=postgres createdb -U postgres -E 'UTF8' -D pg_default -T template_postgis -O postgres  coagis
 
 sudo service postgresql stop
 sudo service postgresql start 
