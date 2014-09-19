@@ -52,7 +52,7 @@ sudo -u postgres PGPASSWORD=postgres psql -U postgres -d template_postgis -c "cr
 sudo -u postgres PGPASSWORD=postgres psql -U postgres -d template_postgis -c "create extension hstore;"
 
 #fixes error gist_geometry_ops dosen't exist
-sudo -u postgres PGPASSWORD=postgres psql -U postgres -d template_postgis -f ./postgis-2.0.6/postgis/legacy_gist.sql
+sudo -u postgres PGPASSWORD=postgres psql -U postgres -d template_postgis -f /home/ubuntu/postgis-2.0.6/postgis/legacy_gist.sql
 
 sudo service postgresql stop
 sudo service postgresql start 
