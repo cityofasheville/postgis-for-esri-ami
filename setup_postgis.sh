@@ -43,19 +43,20 @@ sudo ldconfig
 sudo service postgresql stop
 sudo service postgresql start 
 
+
 #spatially enables default databases 
 #this is using default postgres login DO NOT forget change all the default passwords after server is running!
-sudo -u postgres PGPASSWORD=postgres psql -U postgres -d postgres -c "create extension postgis;"
-sudo -u postgres PGPASSWORD=postgres psql -U postgres -d postgres -c "create extension postgis_topology;"
-sudo -u postgres PGPASSWORD=postgres psql -U postgres -d geodata -c "create extension postgis;"
-sudo -u postgres PGPASSWORD=postgres psql -U postgres -d geodata -c "create extension postgis_topology;"
-sudo -u postgres PGPASSWORD=postgres psql -U postgres -d egdb -c "create extension postgis;"
-sudo -u postgres PGPASSWORD=postgres psql -U postgres -d egdb -c "create extension postgis_topology;"
+#sudo -u postgres PGPASSWORD=postgres psql -U postgres -d postgres -c "create extension postgis;"
+#sudo -u postgres PGPASSWORD=postgres psql -U postgres -d postgres -c "create extension postgis_topology;"
+#sudo -u postgres PGPASSWORD=postgres psql -U postgres -d geodata -c "create extension postgis;"
+#sudo -u postgres PGPASSWORD=postgres psql -U postgres -d geodata -c "create extension postgis_topology;"
+#sudo -u postgres PGPASSWORD=postgres psql -U postgres -d egdb -c "create extension postgis;"
+#sudo -u postgres PGPASSWORD=postgres psql -U postgres -d egdb -c "create extension postgis_topology;"
 
 #fixes error gist_geometry_ops dosen't exist
-sudo -u postgres PGPASSWORD=postgres psql -U postgres -d geodata -f ./postgis-2.0.6/postgis/legacy_gist.sql
-sudo -u postgres PGPASSWORD=postgres psql -U postgres -d egdb -f ./postgis-2.0.6/postgis/legacy_gist.sql
-sudo -u postgres PGPASSWORD=postgres psql -U postgres -d postgres -f ./postgis-2.0.6/postgis/legacy_gist.sql
+#sudo -u postgres PGPASSWORD=postgres psql -U postgres -d geodata -f ./postgis-2.0.6/postgis/legacy_gist.sql
+#sudo -u postgres PGPASSWORD=postgres psql -U postgres -d egdb -f ./postgis-2.0.6/postgis/legacy_gist.sql
+#sudo -u postgres PGPASSWORD=postgres psql -U postgres -d postgres -f ./postgis-2.0.6/postgis/legacy_gist.sql
 
 sudo service postgresql stop
 sudo service postgresql start 
