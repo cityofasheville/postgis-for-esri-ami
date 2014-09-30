@@ -55,5 +55,10 @@ sudo -u postgres PGPASSWORD=postgres psql -U postgres -d template_postgis -c "cr
 sudo -u postgres PGPASSWORD=postgres psql -U postgres -d template_postgis -f /home/ubuntu/postgis-2.0.6/postgis/legacy_gist.sql
 sudo -u postgres PGPASSWORD=postgres createdb -U postgres -E 'UTF8' -D pg_default -T template_postgis -O postgres  coagis
 
+
+wget https://s3.amazonaws.com/argisfiles/undefined-2017.respc
+sudo -u arcgis cp undefined-2017.respc /home/arcgis
+sudo -u arcgis /arcgis/server/tools/python addnewsde.py
+
 sudo service postgresql stop
 sudo service postgresql start 
