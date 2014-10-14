@@ -4,11 +4,12 @@
 sudo service postgresql stop
 sudo service postgresql start 
 
-sudo -u postgres PGPASSWORD=postgres psql -U postgres -d coagis -c "CREATE SCHEMA owner AUTHORIZATION owner;"
-sudo -u postgres PGPASSWORD=postgres psql -U postgres -d coagis -c "GRANT ALL ON SCHEMA owner TO sde;"
-sudo -u postgres PGPASSWORD=postgres psql -U postgres -d coagis -c "GRANT ALL ON SCHEMA owner TO public;"
-sudo -u postgres PGPASSWORD=postgres psql -U postgres -d coagis -c "GRANT ALL ON SCHEMA owner to postgres;"
-sudo -u postgres PGPASSWORD=postgres psql -U postgres -d coagis -c "GRANT ALL ON DATABASE coagis to owner;""
+sudo -u postgres PGPASSWORD=postgres psql -U postgres -d coagis -c "CREATE ROLE gisowner WITH PASSWORD 'gisowner' LOGIN NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE;"
+sudo -u postgres PGPASSWORD=postgres psql -U postgres -d coagis -c "CREATE SCHEMA gisowner AUTHORIZATION gisowner;"
+sudo -u postgres PGPASSWORD=postgres psql -U postgres -d coagis -c "GRANT ALL ON SCHEMA gisowner TO sde;"
+sudo -u postgres PGPASSWORD=postgres psql -U postgres -d coagis -c "GRANT ALL ON SCHEMA gisowner TO public;"
+sudo -u postgres PGPASSWORD=postgres psql -U postgres -d coagis -c "GRANT ALL ON SCHEMA gisowner to postgres;"
+sudo -u postgres PGPASSWORD=postgres psql -U postgres -d coagis -c "GRANT ALL ON DATABASE coagis to gisowner;"
 
 sudo service postgresql stop
 sudo service postgresql start 
