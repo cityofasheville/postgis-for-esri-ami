@@ -13,6 +13,7 @@ sudo -u postgres PGPASSWORD=postgres psql -U postgres -d coagis -c "GRANT ALL ON
 sudo -u postgres PGPASSWORD=postgres psql -U postgres -d coagis -c "GRANT ALL ON SCHEMA sde to gisowner;"
 sudo -u postgres PGPASSWORD=postgres psql -U postgres -d coagis -c "GRANT ALL ON SCHEMA public to gisowner;"
 sudo -u postgres PGPASSWORD=postgres psql -U postgres -d coagis -c "GRANT ALL ON SCHEMA topology to gisowner;"
+sudo -u postgres PGPASSWORD=postgres psql -U postgres -d coagis -c "GRANT SELECT ON TABLE spatial_ref_sys to gisowner;"
 
 sudo service postgresql stop
 sudo service postgresql start 
