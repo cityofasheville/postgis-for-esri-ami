@@ -10,6 +10,9 @@ sudo -u postgres PGPASSWORD=postgres psql -U postgres -d coagis -c "GRANT ALL ON
 sudo -u postgres PGPASSWORD=postgres psql -U postgres -d coagis -c "GRANT ALL ON SCHEMA gisowner TO public;"
 sudo -u postgres PGPASSWORD=postgres psql -U postgres -d coagis -c "GRANT ALL ON SCHEMA gisowner to postgres;"
 sudo -u postgres PGPASSWORD=postgres psql -U postgres -d coagis -c "GRANT ALL ON DATABASE coagis to gisowner;"
+sudo -u postgres PGPASSWORD=postgres psql -U postgres -d coagis -c "GRANT ALL ON SCHEMA sde to gisowner;"
+sudo -u postgres PGPASSWORD=postgres psql -U postgres -d coagis -c "GRANT ALL ON SCHEMA public to gisowner;"
+sudo -u postgres PGPASSWORD=postgres psql -U postgres -d coagis -c "GRANT ALL ON SCHEMA topology to gisowner;"
 
 sudo service postgresql stop
 sudo service postgresql start 
