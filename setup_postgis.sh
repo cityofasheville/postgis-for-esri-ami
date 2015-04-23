@@ -18,6 +18,12 @@ sudo apt-get -y install libgdal1-dev
 sudo apt-get -y install xsltproc
 sudo apt-get -y install docbook-xsl
 sudo apt-get -y install docbook-mathml
+sudo apt-get -y install git
+sudo apt-get -y install s3cmd
+
+#install correct version of node
+curl -sL https://deb.nodesource.com/setup | sudo bash - 
+sudo apt-get install -y nodejs
 
 #get configure, make, and install geos.
 cd ~
